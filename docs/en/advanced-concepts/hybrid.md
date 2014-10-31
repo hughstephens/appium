@@ -198,4 +198,7 @@ allow a connection to be established. Turn it on by going to **settings >
 safari > advanced**. Please be aware that the web inspector was **added as
 part of iOS 6** and was not available previously.
 
+**NOTE:** if you are experiencing ios_webkit_debug_proxy crashes with iOS8, install the latest 
+ideviceinstaller by running `brew install --HEAD ideviceinstaller`.
+
 Now you can start an appium test session and follow the generalized instructions above.
