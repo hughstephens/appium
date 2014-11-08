@@ -134,12 +134,12 @@ public class Clear extends CommandHandler {
       el.click();
       // Sending 25 delete keys asynchronously
       final long eventTime = SystemClock.uptimeMillis();
-      KeyEvent deleteEvent = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN,
-              KeyEvent.KEYCODE_DEL, 0, 0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0, 0,
-              InputDevice.SOURCE_KEYBOARD);
-      for (int count = 0; count < 25; count++) {
-          injectInputEvent.invoke(bridgeObject, deleteEvent, false);
-      }
+      // KeyEvent deleteEvent = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN,
+      //         KeyEvent.KEYCODE_DEL, 0, 0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0, 0,
+      //         InputDevice.SOURCE_KEYBOARD);
+      // for (int count = 0; count < 25; count++) {
+      //     injectInputEvent.invoke(bridgeObject, deleteEvent, false);
+      // }
     }
 
     return el.getText().isEmpty();
@@ -155,10 +155,10 @@ public class Clear extends CommandHandler {
     String currText = el.getText();
 
     final Method sendKey = utils.getControllerMethod("sendKey", int.class, int.class);
-    sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DPAD_RIGHT, 0);
-    sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DEL, 0);
-    sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DPAD_LEFT, 0);
-    sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DEL, 0);
+    // sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DPAD_RIGHT, 0);
+    // sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DEL, 0);
+    // sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DPAD_LEFT, 0);
+    // sendKey.invoke(utils.getController(), KeyEvent.KEYCODE_DEL, 0);
 
     return currText.equals(el.getText());
   }

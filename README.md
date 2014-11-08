@@ -8,6 +8,8 @@
 
 [![Selenium Test Status](https://saucelabs.com/browser-matrix/appium.svg)](https://saucelabs.com/u/appium)
 
+### This fork of appium disables a clear method beacuse it broke our app
+
 Appium is an open source, cross-platform test automation tool for native, hybrid and mobile web apps, tested on simulators (iOS, FirefoxOS), emulators (Android), and real devices (iOS, Android, FirefoxOS).
 
 **Note:** we have just recently released Appium 1.0. If you already have a bunch of Appium tests, you might want to check out the [Migrating to 1.0](/docs/en/advanced-concepts/migrating-to-1-0.md) doc!
