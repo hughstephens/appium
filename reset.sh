@@ -21,6 +21,7 @@ reset_successful=false
 has_reset_unlock_apk=false
 has_reset_ime_apk=false
 has_reset_settings_apk=false
+has_reset_utf7ime_apk=false
 apidemos_reset=false
 toggletest_reset=false
 hardcore=false
@@ -345,6 +346,22 @@ reset_unicode_ime() {
         has_reset_ime_apk=true
     fi
 }
+reset_utf7ime() {
+    if ! $has_reset_utf7ime_apk; then
+        run_cmd rm -rf build/utf7ime
+        run_cmd mkdir -p build/utf7ime
+        echo "* Building utf7ime.apk"
+        ime_base="submodules/uiautomator-unicode-input-helper"
+        run_cmd git submodule update --init $ime_base
+        install_loc="submodules/uiautomator-unicode-input-helper/Utf7Ime"
+        run_cmd pushd $install_loc
+        run_cmd ant clean && run_cmd ant debug
+        run_cmd popd
+        run_cmd cp $install_loc/bin/utf7ime-debug.apk build/utf7ime
+        uninstall_android_app "jp.jun_nama.test.utf7ime"
+        has_reset_utf7ime_apk=true
+    fi
+}
 
 reset_settings_apk() {
     if ! $has_reset_settings_apk; then
@@ -372,6 +389,7 @@ reset_android() {
     run_cmd "$grunt" buildAndroidBootstrap
     reset_unlock_apk
     reset_unicode_ime
+    reset_utf7ime
     reset_settings_apk
     if $include_dev ; then
         reset_apidemos
@@ -448,6 +466,7 @@ reset_selendroid() {
     run_cmd popd
     reset_unlock_apk
     reset_unicode_ime
+    reset_utf7ime
     if $include_dev ; then
         if ! $apidemos_reset; then
             reset_apidemos

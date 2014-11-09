@@ -41,7 +41,7 @@ public class SetText extends CommandHandler {
         }
         boolean unicodeKeyboard = false;
         if (params.get("unicodeKeyboard") != null) {
-          unicodeKeyboard = Boolean.parseBoolean(params.get("unicodeKeyboard").toString());
+          // unicodeKeyboard = Boolean.parseBoolean(params.get("unicodeKeyboard").toString());
         }
         String currText = el.getText();
         new Clear().execute(command);

@@ -58,3 +58,12 @@
 [submodule "submodules/deviceconsole"]
 	path = submodules/deviceconsole
 	url = https://github.com/rpetrich/deviceconsole.git
+[submodule "submodules/utf7ime"]
+	path = submodules/utf7ime
+	url = https://github.com/hughstephens/uiautomator-unicode-input-helper.git
+[submodule "uiautomator-unicode-input-helper"]
+	path = uiautomator-unicode-input-helper
+	url = https://github.com/hughstephens/uiautomator-unicode-input-helper
+[submodule "submodules/uiautomator-unicode-input-helper"]
+	path = submodules/uiautomator-unicode-input-helper
+	url = https://github.com/hughstephens/uiautomator-unicode-input-helper
